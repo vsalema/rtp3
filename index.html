@@ -179,7 +179,21 @@ iframe {
     document.querySelector('iframe').requestFullscreen();
   }
 </script>
-  
+  <script>
+      $(document).ready(function() {
+    var calcHeight = function() {
+        $('#frameId').height($(window).height());
+    }
+
+    calcHeight();
+
+    $(window).resize(function() {
+        calcHeight();
+    }).load(function() {
+        calcHeight();
+    });
+});
+      </script>
   </body>
 </html>
   
