@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en' class=''>
 
 <head>
-  <meta charset="UTF-8">
+
+  <meta charset='UTF-8'>
+  <title>CodePen Demo</title>
+<meta name="robots" content="noindex">
+
   
-<style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
  
 body {
     margin: 0;            /* Reset default margin */
@@ -23,53 +29,91 @@ iframe {
 
 
 </style>
-   
+
+
+  <style>
+    .light {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  margin-bottom: 10px;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;  
+}
+
+button {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+  height: 100%;
+}
+
+  </style>
+
+  
 
 </head>
 
 <body>
+  <html>
+  <body>
+     <div style="position: fixed; z-index: 0;">
+    <iframe id="iframedemo" width="818" height="505" frameborder="0" allowfullscreen="" scrolling="no" allow="autoplay;fullscreen"></iframe>
+    </div>
+       
+       
+    <div style="position: fixed; z-index: 0;">
+    <iframe id="iframedemo2" width="818" height="505" frameborder="0" allowfullscreen="" scrolling="no" allow="autoplay;fullscreen"></iframe>
+    </div>
+    
+    
+    
+    <div id="status" class="light" hidden></div>
+    
+  </body>
+</html>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+  
+   {
+  var url = "https://ufreetv.com/playm3u8.html?https://streaming-live.rtp.pt/livetvhlsDVR/rtpnHDdvr.smil/playlist.m3u8",
+
  
-<div>
-   
-    <iframe id="iframe_unit_landscape" name="iframe_unit_landscape" onload="loadIFrame(0)"
-        src="https://anym3u8player.com/mp4-player/video-player.php?url=https://streaming-live.rtp.pt/livetvhlsDVR/rtpnHDdvr.smil/playlist.m3u8?DVR" class="iframe" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no">
-    </iframe>
-</div>
 
-<div>
-    
-    <iframe id="iframe_unit_portrait" name="iframe_unit_portrait" onload="loadIFrame(1)"
-        src="https://ufreetv.com/playm3u8.html?https://streaming-live.rtp.pt/livetvhlsDVR/rtpnHDdvr.smil/playlist.m3u8?DVR" height="320" width="240" class="iframe" hidden>
-    </iframe>
-</div>
 
-<div>
-   
-    <iframe id="iframe_iphone8_landscape" name="iframe_iphone8_landscape" onload="loadIFrame(2)"
-        src="http://localhost:3000/mainmenu.html" height="375" width="667" class="iframe" hidden>
-    </iframe>
-</div>
+  $iframe = $('#iframedemo');
 
-<div>
-    
-    <iframe id="iframe_iphone8_portrait" name="iframe_iphone8_portrait" onload="loadIFrame(3)"
-        src="http://localhost:3000/mainmenu.html" height="667" width="375" class="iframe" hidden>
-    </iframe>
-</div>
-<script>
-const iframes = ['iframe_unit_landscape', 'iframe_unit_portrait', 'iframe_iphone8_landscape', 'iframe_iphone8_portrait'];
+  
 
-function loadIFrame(id) {
-    let iframe = document.getElementById(iframes[id]); 
+  $iframe.attr("src", url);
+}
+  
+  
+  
+   {
+  var url = "https://anym3u8player.com/mp4-player/video-player.php?url=https://streaming-live.rtp.pt/livetvhlsDVR/rtpnHDdvr.smil/playlist.m3u8",
 
-    for (var i = 0; i < iframes.length; i++) {
-        if (i !== iframe) {
-           var dest = document.getElementById(iframes[i]).src = src;
-        }
-    }
-};
+ 
 
-</script>
-</body>
+
+  $iframe = $('#iframedemo2');
+
+  
+
+  $iframe.attr("src", url);
+}
+  
+  </script>
+  
+  
+  
+  </body>
 
 </html>
