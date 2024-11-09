@@ -29,9 +29,47 @@ iframe {
 
 <body>
  
-<iframe id="result" src="https://anym3u8player.com/mp4-player/video-player.php?url=https://streaming-live.rtp.pt/livetvhlsDVR/rtpnHDdvr.smil/playlist.m3u8?DVR" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no"></iframe>
-<iframe id="result" name="CodePen" title="CodePen Preview" src="https://codepen.io/vsalema/fullpage/KKOryRB?nocache=true&amp;view=" sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups-to-escape-sandbox allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="camera *; display-capture *; geolocation *; microphone *; web-share *" scrolling="auto" allowtransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe " loading="lazy" style="visibility: hidden;">
-          </iframe>
+<div>
+   
+    <iframe id="iframe_unit_landscape" name="iframe_unit_landscape" onload="loadIFrame(0)"
+        src="https://anym3u8player.com/mp4-player/video-player.php?url=https://streaming-live.rtp.pt/livetvhlsDVR/rtpnHDdvr.smil/playlist.m3u8?DVR" height="240" width="320" class="iframe">
+    </iframe>
+</div>
+
+<div>
+    
+    <iframe id="iframe_unit_portrait" name="iframe_unit_portrait" onload="loadIFrame(1)"
+        src="https://ufreetv.com/playm3u8.html?https://streaming-live.rtp.pt/livetvhlsDVR/rtpnHDdvr.smil/chunklist_b640000_DVR_slpor.m3u8" height="320" width="240" class="iframe" hidden>
+    </iframe>
+</div>
+
+<div>
+   
+    <iframe id="iframe_iphone8_landscape" name="iframe_iphone8_landscape" onload="loadIFrame(2)"
+        src="http://localhost:3000/mainmenu.html" height="375" width="667" class="iframe" hidden>
+    </iframe>
+</div>
+
+<div>
+    
+    <iframe id="iframe_iphone8_portrait" name="iframe_iphone8_portrait" onload="loadIFrame(3)"
+        src="http://localhost:3000/mainmenu.html" height="667" width="375" class="iframe" hidden>
+    </iframe>
+</div>
+<script>
+const iframes = ['iframe_unit_landscape', 'iframe_unit_portrait', 'iframe_iphone8_landscape', 'iframe_iphone8_portrait'];
+
+function loadIFrame(id) {
+    let iframe = document.getElementById(iframes[id]); 
+
+    for (var i = 0; i < iframes.length; i++) {
+        if (i !== iframe) {
+           var dest = document.getElementById(iframes[i]).src = src;
+        }
+    }
+};
+
+</script>
 </body>
 
 </html>
