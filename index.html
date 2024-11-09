@@ -57,10 +57,18 @@ iframe {
     </iframe>
 </div>
 <script>
+const iframes = ['iframe_unit_landscape', 'iframe_unit_portrait', 'iframe_iphone8_landscape', 'iframe_iphone8_portrait'];
 
-const iframes = ['iframe_unit_landscape', 'iframe_unit_portrait', 'iframe_iphone8_landscape', 'iframe_iphone8_portrait'].map(id => document.getElementById(id));
+function loadIFrame(id) {
+    let iframe = document.getElementById(iframes[id]); 
 
-iframes.forEach(iframe => iframe.addEventListener('load', _ => iframes.filter(frame => frame.src != iframe.src).forEach(frame => frame.src = iframe.src)));
+    for (var i = 0; i < iframes.length; i++) {
+        if (i !== iframe) {
+           var dest = document.getElementById(iframes[i]).src = src;
+        }
+    }
+};
+
 </script>
 </body>
 
